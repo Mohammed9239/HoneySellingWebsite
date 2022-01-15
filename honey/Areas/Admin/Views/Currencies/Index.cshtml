@@ -1,0 +1,46 @@
+﻿@model IEnumerable<honey.Areas.Admin.Models.Currency>
+
+@{
+    ViewData["Title"] = "العملات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .navbar {
+        box-shadow: 0px 7px 30px rgb(0 0 0 / 8%);
+    }
+
+    thead th {
+        text-align: right;
+    }
+</style>
+
+<section class="trending-product section" style="margin-top: 10px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>
+                    <a asp-action="Create">اضافة عملة </a>
+                </p>
+                <table class="table text-right">
+                    <thead>
+                        <tr>
+                            <th>العملة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.Name)</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

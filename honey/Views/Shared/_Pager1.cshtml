@@ -1,0 +1,59 @@
+﻿@model PagedList.Core.IPagedList
+@using PagedList.Core.Mvc
+
+<style>
+    .page-link:hover {
+        cursor: pointer!important;
+    }
+
+    .page-item.active .page-link {
+        z-index: 1;
+        color: #fff !important;
+        background-color: #e9bd3d;
+        border-color: #e9bd3d;
+    }
+
+    .pagination .page-item .page-link {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #ebebeb;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 38px;
+        padding: 0;
+        text-align: center;
+        color: #787878;
+    }
+
+    .pagination .page-item .page-link:hover, .pagination .page-item .page-link:focus {
+        background-color: #eee;
+        border-color: #eee;
+        color: #e9bd3d!important;
+    }
+
+    .pagination .page-item:first-child {
+        margin-right: 15px;
+    }
+
+    .pagination .page-item:first-child .page-link {
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .pagination .page-item:last-child {
+        margin-left: 15px;
+    }
+
+    .pagination .page-item:last-child .page-link {
+        margin-left: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+</style>
+
+<pager class="pager-container" list="@Model"
+        options="@PagedListRenderOptions.Bootstrap4PageNumbersOnly"
+        asp-action="@ViewContext.RouteData.Values["Action"]"
+        param-page-number="page" />
+

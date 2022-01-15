@@ -1,0 +1,93 @@
+﻿@model honey.Areas.Admin.Models.Product
+
+@{
+    ViewData["Title"] = "حذف المنتج";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .navbar {
+        box-shadow: 0px 7px 30px rgb(0 0 0 / 8%);
+    }
+    textarea {
+        background-color: #eeeeee;
+    }
+</style>
+
+<section class="item-details section">
+    <div class="container">
+        <form class="form" asp-action="Delete" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="row">
+                <div class="col-md-8 f-r">
+                    <div class="white_shd">
+                        <div class="m-bottom-30">
+                            <label><h6>الاسم</h6></label>
+                            <input asp-for="Name" class="form-control" placeholder="الاسم" readonly>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>الوصف</h6></label>
+                            <textarea asp-for="Description" cols="30" rows="10" placeholder="الوصف" readonly></textarea>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>اسم البائع</h6></label>
+                            <input asp-for="Seller" class="form-control" placeholder="اسم البائع" readonly>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>السعر</h6></label>
+                            <input asp-for="Price" class="form-control" placeholder="السعر" readonly>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>العملة</h6></label>
+                            <input asp-for="Currency.Name" class="form-control" placeholder="السعر" readonly>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>الكمية</h6></label>
+                            <input asp-for="Quantity" class="form-control" placeholder="الكمية" readonly>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>رقم الواتساب</h6></label>
+                            <input asp-for="WhatsappNum" class="form-control" placeholder="رقم الواتساب" readonly>
+                        </div>
+                        <div id="other" class="m-bottom-30">
+                            <label for="last_name"><h6>ارقام التواصل</h6></label>
+                            @foreach (var p in Model.Phones)
+                            {
+                                <input value="@p.Number" class="form-control" readonly>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="white_shd m-bottom-30">
+                        <label class="imgtitle">الصوره بارزه</label>
+                        <div class="favimg">
+                            <img src="~/Uploads/@Model.Images.FirstOrDefault(i=>i.Url.StartsWith("fav")).Url" id="profile-img-tag" class="img-responsive" />
+                        </div>
+                    </div>
+
+                    <div class="white_shd add_img m-bottom-30">
+                        <label class="imgtitle"> صور اخرى</label>
+                        <div class="img gallery">
+                            @foreach (var item in Model.Images.Where(i => !i.Url.StartsWith("fav")).ToList())
+                            {
+                                <img src="~/Uploads/@item.Url" />
+
+                            }
+                        </div>
+                    </div>
+
+                    <div class="white_shd">
+                        <div class="pub">
+                            <input id="save" type="submit" class="btn btn-danger form-control" value="حذف">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>

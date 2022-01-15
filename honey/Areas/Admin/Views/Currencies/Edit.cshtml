@@ -1,0 +1,31 @@
+﻿@model honey.Areas.Admin.Models.Currency
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="item-details section">
+    <div class="container">
+        <h2>تعديل العملة</h2>
+        <form class="form" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="row">
+                <div class="col-md-8 mx-auto" style="float:inherit;margin:auto">
+                    <div class="white_shd">
+                        <div class="m-bottom-30">
+                            <label><h6>العملة</h6></label>
+                            <input asp-for="Name" class="form-control">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="pub">
+                            <input id="save" type="submit" class="btn btn-success form-control" value="تعديل">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+

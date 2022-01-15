@@ -1,0 +1,67 @@
+﻿@model IEnumerable<honey.Areas.Admin.Models.Product>
+
+@{
+    ViewData["Title"] = "كل المنتجات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .navbar {
+        box-shadow: 0px 7px 30px rgb(0 0 0 / 8%);
+    }
+
+    thead th {
+        text-align: right;
+    }
+</style>
+
+<section class="trending-product section" style="margin-top: 10px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>
+                    <a asp-action="Create">اضافة منتج </a>
+                </p>
+                <table class="table text-right">
+                    <thead>
+                        <tr>
+                            <th>الاسم</th>
+                            <th>السعر</th>
+                            <th>العملة</th>
+                            <th>البائع</th>
+                            <th>الواتساب</th>
+                            <th>الكمية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.Name)</a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Currency.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Seller)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.WhatsappNum)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

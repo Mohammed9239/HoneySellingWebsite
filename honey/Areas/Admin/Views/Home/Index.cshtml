@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "لوحة التحكم";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .navbar {
+        box-shadow: 0px 7px 30px rgb(0 0 0 / 8%);
+    }
+</style>
+
+<section class="item-details section">
+    <div class="container">
+        <div class="top-area">
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+                    <div class="product-info">
+                        <div class="cart-button">
+                            <a target="_blank" asp-controller="Products" asp-area="Admin" asp-action="Index" class="btn btn-primary" style="width: 100%;">جميع المنتجات</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-info">
+                        <div class="cart-button">
+                            <a target="_blank" asp-controller="Products" asp-area="Admin" asp-action="Create" class="btn btn-primary" style="width: 100%;">اضافة منتج</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-info">
+                        <div class="cart-button">
+                            <a target="_blank" asp-controller="Currencies" asp-area="Admin" asp-action="Index" class="btn btn-primary" style="width: 100%;">العملات</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-info">
+                        <div class="cart-button">
+                            <a target="_blank" asp-controller="Currencies" asp-area="Admin" asp-action="Create" class="btn btn-primary" style="width: 100%;">اضافة عملة</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

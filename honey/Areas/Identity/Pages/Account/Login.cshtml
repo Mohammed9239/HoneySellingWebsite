@@ -1,0 +1,38 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "تسجيل الدخول";
+}
+
+    <section class="item-details section">
+        <div class="container">
+            <form id="account" method="post">
+                <div class="row">
+                    <div class="col-md-8 mx-auto" style="float:inherit;margin:auto">
+                        <div class="white_shd">
+                            <div class="m-bottom-30">
+                                <label><h6>اسم المستخدم</h6></label>
+                                <input asp-for="Input.UserName" class="form-control" />
+                                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                            </div>
+                            <div class="m-bottom-30">
+                                <label><h6>كلمة المرور</h6></label>
+                                <input asp-for="Input.Password" class="form-control" />
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+                            <div class="pub">
+                                <input id="save" type="submit" class="btn btn-success form-control" value="دخول">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

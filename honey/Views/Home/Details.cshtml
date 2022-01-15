@@ -1,0 +1,131 @@
+﻿@model honey.Areas.Admin.Models.Product
+
+@{
+    ViewData["Title"] = "تفاصيل";
+}
+<style>
+
+    .navbar {
+        box-shadow: 0px 7px 30px rgb(0 0 0 / 8%);
+    }
+</style>
+
+<section class="item-details section">
+    <div class="container">
+        <div class="top-area">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 col-12 f-r">
+                    <div class="product-images">
+                        <main id="gallery">
+                            <div class="main-img">
+                                <img src="~/Uploads/@Model.Images.FirstOrDefault(i => i.Url.StartsWith("fav")).Url" id="current" alt="صوره">
+                            </div>
+                            <div class="images">
+                                @foreach (var item in Model.Images)
+                                {
+                                    <img src="~/Uploads/@item.Url" class="img" alt=" صور العسل">
+
+                                }
+                            </div>
+                        </main>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="product-info">
+                        <h2 id="title" class="title">@Html.DisplayFor(model => model.Name)</h2>
+                        <h3 class="price">
+                            @Html.DisplayFor(model => model.Price)
+                            <sup>
+                                @Html.DisplayFor(model => model.Currency.Name)
+                            </sup>
+                        </h3>
+                        <p class="category">
+                            <i class="fa fa-tag"></i>
+                            البائع :
+                            <a href="javascript:void(0)">
+                                @Html.DisplayFor(model => model.Seller)
+                            </a>
+                        </p>
+                        <p class="category">
+                            <i class="fa fa-whatsapp"></i>
+                            رقم الواتساب :
+                            <a href="javascript:void(0)">
+                                @Html.DisplayFor(model => model.WhatsappNum)
+                            </a>
+                        </p>
+                        <p class="category">
+                            <i class="fa fa-phone"></i>
+                             للتواصل :
+                            @foreach (var item in Model.Phones)
+                            {
+                                <a href="javascript:void(0)">
+                                    @item.Number
+                                </a>@:-
+                            }
+
+
+                        </p>
+                        <p class="info-text">
+                            @Html.DisplayFor(model => model.Description)
+                        </p>
+
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="form-group quantity">
+                                    <label for="color">الكمية</label>
+                                    <select id="Qun" class="form-control" name="Qun">
+                                        @for (int i = 1; i < Model.Quantity + 1; i++)
+                                        {
+                                            <option>@i</option>
+
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="cart-button">
+                                    <a id="send" target="_blank" class="btn btn-primary" style="width: 100%;">طلب</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section scripts{ 
+<script>
+    const current = document.getElementById("current");
+    const opacity = 0.6;
+    const imgs = document.querySelectorAll(".img");
+    imgs.forEach(img => {
+        img.addEventListener("click", (e) => {
+            //reset opacity
+            imgs.forEach(img => {
+                img.style.opacity = 1;
+            });
+            current.src = e.target.src;
+            //adding class 
+            //current.classList.add("fade-in");
+            //opacity
+            e.target.style.opacity = opacity;
+        });
+    });
+
+    var selct = document.getElementById("Qun").value;
+    $('#Qun').on("change", function () {
+        var selc = document.getElementById("Qun").value;
+        selct = selc;
+    });
+
+    var str = $('#title').text();
+
+    $('#send').on("click", function () {
+        $('#send').attr("href", 'https://wa.me/967' +@Model.WhatsappNum+'?text= السلام%20عليكم%20ورحمه%20الله%20وبركاته%20' + 'طلبي%20هو%20' + str + '%20الكمية%20'  + selct);
+    });
+
+</script>
+}

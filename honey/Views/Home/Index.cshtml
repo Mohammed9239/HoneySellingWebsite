@@ -1,0 +1,282 @@
+﻿@model IEnumerable<honey.Areas.Admin.Models.Product>
+@{
+    ViewData["Title"] = "الرئيسية";
+}
+
+<section id="home" class="home bg-black fix">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="main_home text-center">
+                <div class="col-md-12">
+                    <div class="hello_slid">
+
+                        <div class="slid_item">
+                            <div class="home_text ">
+                                <h1 class="text-white">اهلا بكم في <strong>سوق العسل</strong></h1>
+                                <h2 class="text-white">لدينا افضل واجود انواع العسل</h2>
+                                <h3 class="text-white">- عسل <strong>صافي</strong> 100% -</h3>
+                            </div>
+
+                            <div class="home_btns m-top-40">
+                                <a asp-action="Products" class="btn btn-primary m-top-20">تسوق</a>
+                            </div>
+                        </div>
+                        <!-- End off slid item -->
+
+                        <div class="slid_item">
+                            <div class="home_text ">
+                                <h1 class="text-white">اهلا بكم في <strong>سوق العسل</strong></h1>
+                                <h2 class="text-white">لدينا افضل واجود انواع العسل</h2>
+                                <h3 class="text-white">- شعارنا <strong>الثقة والمصداقية</strong> -</h3>
+                            </div>
+
+                            <div class="home_btns m-top-40">
+                                <a asp-action="Products" class="btn btn-primary m-top-20">تسوق</a>
+                            </div>
+                        </div>
+                        <!-- End off slid item -->
+
+                        <div class="slid_item">
+                            <div class="home_text ">
+                                <h1 class="text-white">اهلا بكم في <strong>سوق العسل</strong></h1>
+                                <h2 class="text-white">لدينا افضل واجود انواع العسل</h2>
+                                <h3 class="text-white">- نسعى لإرضاء <strong>عملائنا</strong> -</h3>
+                            </div>
+
+                            <div class="home_btns m-top-40">
+                                <a asp-action="Products" class="btn btn-primary m-top-20">تسوق</a>
+                            </div>
+                        </div>
+                        <!-- End off slid item -->
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div><!--End off row-->
+    </div><!--End off container -->
+</section>
+<!--End off Home Sections-->
+
+<!--Featured Section-->
+<section id="features" class="features">
+    <div class="container">
+        <div class="row">
+            <div class="main_features fix roomy-70">
+                <div class="col-md-4">
+                    <div class="features_item sm-m-top-30">
+                        <div class="f_item_icon">
+                            <i class="fa fa-forumbee"></i>
+                        </div>
+                        <div class="f_item_text">
+                            <h3>عسل طبيعي <span class="one">100%</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="features_item sm-m-top-30">
+                        <div class="f_item_icon">
+                            <i class="fa fa-thumbs-o-up"></i>
+                        </div>
+                        <div class="f_item_text">
+                            <h3>شعارنا الثقة والمصداقية</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="features_item sm-m-top-30">
+                        <div class="f_item_icon">
+                            <i class="fa fa-smile-o"></i>
+                        </div>
+                        <div class="f_item_text">
+                            <h3>نسعى لإرضاء عملائنا</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End off row -->
+    </div><!-- End off container -->
+</section>
+<!-- End off Featured Section-->
+
+<!--Business Section-->
+<section id="business" class="business bg-grey roomy-70">
+    <div class="container">
+        <div class="row">
+            <div class="main_business">
+                <div class="col-md-6">
+                    <div class="business_slid">
+                        <div class="slid_shap bg-grey"></div>
+                        <div class="business_items text-center">
+                            <div class="business_item">
+                                <div class="business_img">
+                                    <img src="~/images/about1.webp" alt="" />
+                                </div>
+                            </div>
+
+                            <div class="business_item">
+                                <div class="business_img">
+                                    <img src="~/images/about2.webp" alt="" />
+                                </div>
+                            </div>
+
+                            <div class="business_item">
+                                <div class="business_img">
+                                    <img src="~/images/about3.webp" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="business_item sm-m-top-50">
+                        <h2> ونقدم لكم خدمات اخرى </h2>
+                        <ul>
+                            <li><i class="fa fa-arrow-circle-left"></i>خدمة التوصيل</li>
+                            <li><i class="fa  fa-arrow-circle-left"></i>الطلب بالجملة</li>
+                        </ul>
+                        <p class="m-top-20">
+                            اذا كنت ترغب  في شرى عسل  <br /> ولايهمك لدينا خبراء في عملية الشراء
+                        </p>
+
+                        <div class="business_btn">
+                            <a asp-action="Products" target="_blank" class="btn btn-primary m-top-20">تسوق</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End off Business section -->
+
+<!--product section-->
+<section id="product" class="product">
+    <div class="container">
+        <div class="main_product roomy-80">
+            <div class="head_title text-center fix">
+                <h2 class="text-uppercase">اخر منتجاتنا من العسل</h2>
+                <h5></h5>
+            </div>
+
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="container">
+                            <div class="row">
+                                @foreach (var item in Model.Take(4))
+                                {
+                                    <div class="col-sm-3">
+                                        <div class="port_item xs-m-top-30">
+                                            <div class="port_img">
+                                                <img src="~/Uploads/@item.Images.FirstOrDefault(i=>i.Url.StartsWith("fav")).Url" alt="" />
+                                            </div>
+                                            <div class="port_caption m-top-20">
+                                                <h5>@item.Name</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="container">
+                            <div class="row">
+
+                                @foreach (var item in Model.Skip(4).Take(4))
+                                {
+                                    <div class="col-sm-3">
+                                        <div class="port_item xs-m-top-30">
+                                            <div class="port_img">
+                                                <img src="~/Uploads/@item.Images.FirstOrDefault(i=>i.Url.StartsWith("fav")).Url" alt="" />
+                                            </div>
+                                            <div class="port_caption m-top-20">
+                                                <h5>@item.Name</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="container">
+                            <div class="row">
+
+                                @foreach (var item in Model.Skip(8).Take(4))
+                                {
+                                    <div class="col-sm-3">
+                                        <div class="port_item xs-m-top-30">
+                                            <div class="port_img">
+                                                <img src="~/Uploads/@item.Images.FirstOrDefault(i=>i.Url.StartsWith("fav")).Url" alt="" />
+                                            </div>
+                                            <div class="port_caption m-top-20">
+                                                <h5>@item.Name</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controls -->
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </div>
+
+            <div class="business_btn text-center m-top-40">
+                <a asp-action="Products" class="btn btn-primary">تسوق المزيد</a>
+            </div>
+
+            <div id="contact"></div>
+        </div><!-- End off row -->
+    </div><!-- End off container -->
+</section>
+<!-- End off Product section -->
+
+<!--Call to  action section-->
+<section class="action bg-primary roomy-40">
+    <div class="container">
+        <div class="row">
+            <div class="maine_action">
+                <div class="col-md-8 f-r">
+                    <div class="action_item text-center">
+                        <h2 class="text-white">للتواصل والاستفسارات والاعلانات تواصل عبر الواتساب</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="action_btn text-center sm-text-center">
+                        <a href="https://wa.me/967778963214" target="_blank" class="btn btn-default"> <i class="fa fa-whatsapp"></i> تواصل معنا</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

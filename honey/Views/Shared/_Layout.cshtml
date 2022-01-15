@@ -1,0 +1,213 @@
+﻿@{
+    var Last3Product = ViewData["Last3Product"] as List<honey.Areas.Admin.Models.Product>;
+}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="ar">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>سوق العسل - @ViewData["Title"]</title>
+    <meta name="description" content="mohammed mohsen alamoudi // +967715336843">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="~/favicon.png">
+    <link rel="stylesheet" href="~/css/slick.min.css">
+    <link rel="stylesheet" href="~/css/slick-theme.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/bootsnav.min.css">
+    <link rel="stylesheet" href="~/css/style.min.css">
+    <link rel="stylesheet" href="~/css/responsive.min.css" />
+</head>
+
+<body data-spy="scroll" data-target=".navbar-collapse" dir="rtl">
+
+    <!-- Preloader -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+            </div>
+        </div>
+    </div><!--End off Preloader -->
+
+
+    <div class="culmn">
+
+        <!--Home page style-->
+        <nav class="navbar navbar-default bootsnav navbar-fixed">
+
+            <div class="navbar-top bg-grey fix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 f-r">
+                            <div class="navbar-callus text-right sm-text-center">
+                                <ul class="list-inline">
+                                    <li><a href=""><i class="fa fa-phone"></i> الهاتف : 00967778963214</a></li>
+                                    <li><a href=""><i class="fa fa-envelope-o"></i> الايميل : doan.9239@gmail.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="navbar-socail text-left sm-text-center">
+                                <ul class="list-inline">
+                                    <li><a <a href="https://wa.me/967778963214" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start Top Search -->
+            <div class="top-search">
+                <div class="container">
+                    <div class="input-group">
+                        <span class="input-group-addon"><a href=""><i class="fa fa-search"></i></a></span>
+                        <input type="text" class="form-control" placeholder="بحث">
+                        <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Search -->
+
+
+            <div class="container">
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="~/#home">
+                        <img src="~/images/logo.png" class="logo" alt="">
+                        <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
+                    </a>
+
+                </div>
+                <!-- End Header Navigation -->
+                <!-- navbar menu -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="~/#home">الرئيسة</a></li>
+                        <li><a href="~/#features">معلومات</a></li>
+                        <li><a href="~/#business">خدمات</a></li>
+                        <li><a href="~/Home/Products">المنتجات</a></li>
+                        <li><a href="~/#contact">تواصل معنا</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!--Home Sections-->
+
+
+        @RenderBody()
+
+        <!-- footer section-->
+        <footer id="" class="footer action-lage bg-black p-top-80">
+            <!--<div class="action-lage"></div>-->
+            <div class="container">
+                <div class="row">
+                    <div class="widget_area">
+
+                        <div class="col-md-4">
+                            <div class="widget_item widget_about">
+                                <h5 class="text-white">معلومات عنا</h5>
+                                <p class="m-top-20">
+                                    هدفنا تقريب المسافات <br /> بين البائع والمشتري وتسهيل عملية الشراء
+                                </p>
+                                <div class="widget_ab_item m-top-0">
+                                    <div class="item_icon"><i class="fa fa-location-arrow"></i></div>
+                                    <div class="widget_ab_item_text">
+                                        <h6 class="text-white">العنوان</h6>
+                                        <p>
+                                            حضرموت - دوعن - الهجرين
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="widget_ab_item m-top-30">
+                                    <div class="item_icon"><i class="fa fa-phone"></i></div>
+                                    <div class="widget_ab_item_text">
+                                        <h6 class="text-white">الهاتف :</h6>
+                                        <p>
+                                            00967778963214
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="widget_ab_item m-top-30">
+                                    <div class="item_icon"><i class="fa fa-envelope-o"></i></div>
+                                    <div class="widget_ab_item_text">
+                                        <h6 class="text-white">البريد الالكتروني : </h6>
+                                        <p>
+                                            doan.9239@gmail.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="widget_item widget_latest sm-m-top-50">
+                                @foreach (var item in Last3Product)
+                                {
+                                    <div class="widget_latst_item m-top-40">
+                                        <div class="item_icon"><img src="~/Uploads/@item.Images.FirstOrDefault(i=>i.Url.StartsWith("fav")).Url" alt="" /></div>
+                                        <div class="widget_latst_item_text">
+                                            <p>@item.Name</p>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="widget_item widget_newsletter sm-m-top-50">
+                                <div class="widget_brand m-top-40">
+                                    <a href="~/#home"><img src="~/images/logo.png" /></a>
+                                    <p>
+                                        اهلا بكم في سوق العسل <br />
+                                        لدينا افصل واجود انواع العسل الدوعني
+                                    </p>
+                                </div>
+                                <ul class="list-inline m-top-20">
+                                    <li> - <a href="https://wa.me/967778963214" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-instagram"></i></a> - </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+
+    <!-- JS includes -->
+    <script src="~/js/jquery-1.11.2.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/bootsnav.min.js"></script>
+    <script src="~/js/main.min.js"></script>
+    @RenderSection("scripts", false)
+
+</body>
+</html>

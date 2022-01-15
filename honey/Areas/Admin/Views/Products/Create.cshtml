@@ -1,0 +1,147 @@
+﻿@model honey.Areas.Admin.Models.Product
+
+@{
+    ViewData["Title"] = "اضافة";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .navbar {
+        box-shadow: 0px 7px 30px rgb(0 0 0 / 8%);
+    }
+</style>
+
+<section class="item-details section">
+    <div class="container">
+        <form class="form" asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="white_shd">
+                        <div class="m-bottom-30">
+                            <label><h6>الاسم</h6></label>
+                            <input asp-for="Name" class="form-control" placeholder="الاسم">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>الوصف</h6></label>
+                            <textarea asp-for="Description" cols="30" rows="10" placeholder="الوصف"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>اسم البائع</h6></label>
+                            <input asp-for="Seller" class="form-control" placeholder="اسم البائع">
+                            <span asp-validation-for="Seller" class="text-danger"></span>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>السعر</h6></label>
+                            <input asp-for="Price" class="form-control" placeholder="السعر">
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>العملة</h6></label>
+                            <select asp-for="CurrencyID" class="form-control" asp-items="ViewBag.CurrencyID">
+                                <option>اختر</option>
+                            </select>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>الكمية</h6></label>
+                            <input asp-for="Quantity" class="form-control" placeholder="الكمية">
+                            <span asp-validation-for="Quantity" class="text-danger"></span>
+                        </div>
+                        <div class="m-bottom-30">
+                            <label for="last_name"><h6>رقم الواتساب</h6></label>
+                            <input asp-for="WhatsappNum" class="form-control" placeholder="مثل : 715336843">
+                            <span asp-validation-for="WhatsappNum" class="text-danger"></span>
+                        </div>
+                        <div id="other" class="m-bottom-30">
+
+                        </div>
+
+                        <div class="m-bottom-30">
+                            <input id="AddNum" type="button" class="btn btn-success" value="اضافة رقم اخر للتواصل">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="white_shd m-bottom-30">
+                        <label class="imgtitle">اختر صوره بارزه</label>
+                        <div class="favimg">
+                            <i class="fa fa-picture-o" id="pic"></i>
+                            <img src="" id="profile-img-tag" class="img-responsive" />
+                        </div>
+                        <input name="fav" type="file" id="profile-img" class="form form-control" required>
+                    </div>
+
+                    <div class="white_shd add_img m-bottom-30">
+                        <label class="imgtitle">اضف صور اخرى</label>
+                        <div class="img gallery">
+                        </div>
+                        <input name="imgs" id="gallery-photo-add" type="file" class="form form-control" multiple>
+                    </div>
+
+                    <div class="white_shd">
+                        <div class="pub">
+                            <input id="save" type="submit" class="btn btn-success form-control" value="نشر">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+@section scripts{
+    <script>
+            $list = $("#other");
+            $count = 1
+            $('#AddNum').on("click", function () {
+
+
+                $list.append('<div class="m-bottom-30">');
+                $list.append('<label for="last_name"><h6> رقم اخر ' + $count + '</h6></label>');
+                $list.append('<input name="Phones" class="form-control" placeholder="رقم اخر">');
+                $list.append('</div>');
+                $count++;
+            });
+
+            function readURL(input) {
+             if (input.files && input.files[0]) {
+                 var reader = new FileReader();
+
+                 reader.onload = function (e) {
+                     $('#profile-img-tag').attr('src', e.target.result);
+                 }
+                 reader.readAsDataURL(input.files[0]);
+             }
+         }
+         $("#profile-img").change(function(){
+             readURL(this);
+             $("#pic").hide();
+         });
+
+         $(function() {
+            var imagesPreview = function(input, placeToInsertImagePreview) {
+            if (input.files) {
+               var filesAmount = input.files.length;
+               for (i = 0; i < filesAmount; i++) {
+                  var reader = new FileReader();
+                  reader.onload = function(event) {
+                     $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                  }
+                  reader.readAsDataURL(input.files[i]);
+               }
+            }};
+
+         $('#gallery-photo-add').on('change', function() {
+            $('div.gallery img').remove();
+            imagesPreview(this, 'div.gallery');
+
+         })
+      });
+
+    </script>
+}
